@@ -1,18 +1,18 @@
 function convertir_a_Ascii() {
-    let caracter = document.getElementById("charInput").value;
+    let caracter = document.getElementById("caracterEntrada").value;
     if (caracter.length === 1) {
         let ascii = caracter.charCodeAt(0);
-        document.getElementById("asciiOutput").innerText = "Código ASCII: " + ascii;
+        document.getElementById("asciiSalida").innerText = "Código ASCII: " + ascii;
     } else {
         alert("Ingrese un solo carácter.");
     }
 }
 function borrarCaracter(){
-    document.getElementById("charInput").value="";
+    document.getElementById("caracterEntrada").value="";
     
 }
 function convertir_a_Binario() {
-    let caracter = document.getElementById("charInput").value;
+    let caracter = document.getElementById("caracterEntrada").value;
     if (caracter.length === 1) {
         let ascii = caracter.charCodeAt(0);
         let binario = "";
@@ -24,7 +24,7 @@ function convertir_a_Binario() {
                 binario+="0";
             }
         }
-        document.getElementById("binaryOutput").innerText = "Binario (8 bits): " + binario;
+        document.getElementById("binarioSalida").innerText = "Binario (8 bits): " + binario;
     } else {
         alert("Ingrese un solo carácter.");
     }
@@ -32,8 +32,24 @@ function convertir_a_Binario() {
 
 function convertir_Binario_a_Caracter() {
     let binario = document.getElementById("binarioCaracterEntrada").value;
-    let caracter = String.fromCharCode(parseInt(binario, 2));
-    document.getElementById("binarioCaracterSalida").innerText = "El caracter es: "+caracter;
+    let suma = 0;
+    let caracter="";
+    if (binario.length==8){
+        if (/^[01]+$/.test(binario)){
+            for (let vc = 0 ; vc<binario.length;vc++){
+                if (binario[7-vc]=="1"){
+                    suma+=2**vc;
+                }
+            }
+            caracter = String.fromCharCode(suma);  
+            document.getElementById("binarioCaracterSalida").innerText = "El caracter es: "+caracter;
+        } else {
+            alert("Ingrese solo 1s y 0s.");
+        }
+    } else{
+        alert("Ingrese un binario de 8 bits");
+    }
+    
 }
 
 function borrarBinario(){
