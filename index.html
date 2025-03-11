@@ -27,7 +27,7 @@
     <div class="section">
         <h2>Convertir de Binario a Caracter</h2>
         <label for="binarioCaracterEntrada">Ingrese un binario de 8 bits:</label>
-        <input type="text" id="binarioCaracterEntrada" maxlength="8">
+        <input type="text" id="binarioCaracterEntrada" maxlength="8" oninput="this.value = this.value.replace(/[^0-1]/g, '')">
         <button onclick="convertir_Binario_a_Caracter()">Convertir a ASCII</button>
         <button onclick="borrarBinario()">Borrar</button>
         <p id="binarioCaracterSalida"></p>
