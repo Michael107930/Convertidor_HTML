@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión ASCII</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Conversión de Caracteres ASCII</h1>
+    
+    <div class="section">
+        <h2>Convertir de Carácter a ASCII</h2>
+        <label for="charInput">Ingrese un carácter:</label>
+        <input type="text" id="charInput" maxlength="1">
+        <button onclick="convertir_a_Ascii()">Convertir a ASCII</button>
+        <button onclick="borrarCaracter()">Borrar</button>
+        <p id="asciiOutput"></p>
+    </div>
+
+    <div class="section">
+        <h2>Convertir de ASCII a Binario</h2>
+        <button onclick="convertir_a_Binario()">Convertir a Binario</button>
+        <p id="binaryOutput"></p>
+    </div>
+
+    <div class="section">
+        <h2>Convertir de Binario a Caracter</h2>
+        <label for="binarioCaracterEntrada">Ingrese un binario de 8 bits:</label>
+        <input type="text" id="binarioCaracterEntrada" maxlength="8">
+        <button onclick="convertir_Binario_a_Caracter()">Convertir a ASCII</button>
+        <button onclick="borrarBinario()">Borrar</button>
+        <p id="binarioCaracterSalida"></p>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
