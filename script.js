@@ -18,7 +18,7 @@ function convertir_a_Binario() {
         let binario = "";
         for (let i = 7; i>=0; i--){
             if (2**i<=ascii){
-                binario+=+"1";
+                binario+="1";
                 ascii-=2**i;
             } else{
                 binario+="0";
